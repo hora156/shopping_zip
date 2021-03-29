@@ -1,5 +1,7 @@
 package com.plete.service;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +19,11 @@ public class UserService implements IuserService {
 		
 		return mapper.selectUser(id);
 		
+	}
+
+	@Override
+	public List<User> userList() {
+		return mapper.userList();
 	}
 	
 }

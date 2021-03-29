@@ -1,6 +1,9 @@
 package com.plete.util;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,16 +16,17 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class Header<T> {
 
-    // api 통신시간
-//    @JsonProperty("transaction_time") //    데이터 통신을 할 때는 스네이크 케이스를 하나씩 지정할 때 사용
+    // api �넻�떊�떆媛�
+//    @JsonProperty("transaction_time") //    �뜲�씠�꽣 �넻�떊�쓣 �븷 �븣�뒗 �뒪�꽕�씠�겕 耳��씠�뒪瑜� �븯�굹�뵫 吏��젙�븷 �븣 �궗�슜
     private String transactionTime;
 
-    // api 응답 코드
+    // api �쓳�떟 肄붾뱶
     private String resultCode;
 
-    // api 부가 설명
+    // api 遺�媛� �꽕紐�
     private String description;
 
 

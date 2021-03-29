@@ -9,4 +9,8 @@
         SELECT * FROM zip_user where id = ${value} 
     </select>
     
+    <select id="userList" resultType="com.plete.entity.User">
+   		SELECT * FROM zip_user 
+    </select>
+    
 </mapper>
