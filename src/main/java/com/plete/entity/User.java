@@ -3,6 +3,12 @@ package com.plete.entity;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 
@@ -18,7 +24,7 @@ import lombok.NoArgsConstructor;
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class User {
 
-    private int id;
+    private Long id;
 
     private String account;
 
@@ -32,15 +38,15 @@ public class User {
 
     private String phoneNumber;
 
-    private LocalDateTime registeredAt;
+    private String registeredAt;
 
-    private LocalDateTime unregisteredAt;
+    private String unregisteredAt;
 
-    private LocalDateTime createdAt;
+    private String createdAt;
 
     private String createdBy;
 
-    private LocalDateTime updatedAt;
+    private String updatedAt;
 
     private String updatedBy;
 

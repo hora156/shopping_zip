@@ -13,7 +13,7 @@ public class UserService implements IuserService {
 	UserMapper mapper;
 	
 	@Override
-	public User selectUser(String id) {
+	public User selectUser(Long id) {
 		
 		return mapper.selectUser(id);
 		

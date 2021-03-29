@@ -4,6 +4,6 @@ import com.plete.entity.User;
 
 public interface UserMapper {
 	
-	User selectUser(String id);
+	User selectUser(Long id);
 	
 }
