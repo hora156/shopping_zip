@@ -1,4 +1,4 @@
-package com.example.contoller;
+package com.plete.contoller;
 
 import java.text.DateFormat;
 import java.util.Date;
