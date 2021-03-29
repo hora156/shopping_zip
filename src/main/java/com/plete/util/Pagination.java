@@ -1,4 +1,4 @@
-package com.plete.paging;
+package com.plete.util;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
