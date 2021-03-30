@@ -4,45 +4,51 @@ import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
+import com.fasterxml.jackson.databind.annotation.JsonNaming;
+
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
+@JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class OrderGroup {
 
     private Long id;
 
     private String status;
 
-    private String orderType;   // 주문의 형태 - 일괄 / 개별
+    private String order_type;   // 주문의 형태 - 일괄 / 개별
 
-    private String revAddress;
+    private String rev_address;
 
-    private String revName;
+    private String rev_name;
 
-    private String paymentType; // 카드 / 현금
+    private String payment_type; // 카드 / 현금
 
-    private BigDecimal totalPrice;
+    private BigDecimal total_price;
 
-    private Integer totalQuantity;
+    private Integer total_quantity;
 
-    private LocalDateTime orderAt;
+    private LocalDateTime order_at;
 
-    private LocalDateTime arrivalDate;
+    private LocalDateTime arrival_date;
 
-    private LocalDateTime createdAt;
+    private LocalDateTime created_at;
 
-    private String createdBy;
+    private String created_by;
 
-    private LocalDateTime updatedAt;
+    private LocalDateTime updated_at;
 
-    private String updatedBy;
+    private String updated_by;
 
     // OrderGroup N : 1 User
-    private User user;
+    private Long user_id;
 
     // OrderGroup 1 : N OrderDetail
     private List<OrderDetail> orderDetailList;

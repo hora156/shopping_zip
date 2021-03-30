@@ -13,4 +13,8 @@
    		SELECT * FROM zip_user 
     </select>
     
+    <select id="orderList" resultType="com.plete.entity.OrderGroup">
+   		SELECT * FROM order_group 
+    </select>
+    
 </mapper>

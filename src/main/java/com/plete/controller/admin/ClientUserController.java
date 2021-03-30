@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.plete.entity.OrderGroup;
 import com.plete.entity.User;
 import com.plete.service.UserService;
 import com.plete.util.CrudInterface;
@@ -56,11 +57,22 @@ public class ClientUserController implements CrudInterface<User, User> {
 	}
 	
 	@RequestMapping("/userList")
-	public ModelAndView userList(Model mo){
+	public ModelAndView userList(){
 		
 		ModelAndView model = new ModelAndView("/admin/content/userList");
-		mo.addAttribute("user", Header.OK(service.userList()));
-		/* model.addObject("user", Header.OK(service.userList())); */
+//		mo.addAttribute("user", service.userList());
+		model.addObject("user", Header.OK(service.userList()));
+		
+		return model;
+	}
+	
+	@RequestMapping("/orderList")
+	public ModelAndView orderList(){
+		
+		ModelAndView model = new ModelAndView("/admin/content/orderList");
+		
+		model.addObject("order", Header.OK(service.orderList()));
+		
 		
 		return model;
 	}

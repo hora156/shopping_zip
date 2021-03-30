@@ -52,7 +52,7 @@ desired effect
       </ol>
     </section>
     <!-- Main content -->
-    <section id="content123" class="content container-fluid">
+    <section id="content" class="content container-fluid">
     
     </section>
     <!-- /.content -->
@@ -74,16 +74,26 @@ function getUser() {
 	$.ajax({
 		url:"/admin/userList",
 		success:function(result){
-			console.log(result);
 			var html = jQuery('<div>').html(result);
 			var contents = html.find("#content-main").html();
-			$('#content123').html(contents);
+			$('#content').html(contents);
+		}
+	});
+}
+
+function getOrderInfo() {
+	$.ajax({
+		url:"/admin/orderList",
+		success:function(result){
+			var html = jQuery('<div>').html(result);
+			var contents = html.find("#panel-body").html();
+			$('#content').html(contents);
 		}
 	});
 }
 			
 $(document).ready(function() {
-	getUser();
+	getOrderInfo();
 });
 
 </script>

@@ -12,11 +12,22 @@ http://www.springframework.org/schema/security/spring-security-3.1.xsd">
 
 <authentication-manager>
 	<authentication-provider>
-		<user-service>
+		<!-- <user-service>
 			<user name="admin" password="1234" authorities="ROLE_USER, ROLE_ADMIN" />
 			<user name="guest" password="1234" authorities="ROLE_USER" />
 			<user name="guest2" password="a1234" authorities="ROLE_USER" />
-		</user-service>
+		</user-service> -->
+		<jdbc-user-service data-source-ref="dataSource"
+users-by-username-query="SELECT USERID as username,
+							PASSWORD,
+							1 as enabled
+						FROM admin_user WHERE USERID=?"
+authorities-by-username-query="SELECT USERID as username,
+							CASE WHEN USERGRADE='01' THEN 'ROLE_ADMIN'
+							ELSE 'ROLE_USER'
+							END authority
+						FROM admin_user WHERE USERID=?"
+		/>
 	</authentication-provider>
 </authentication-manager>
 
