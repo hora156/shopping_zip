@@ -1,4 +1,4 @@
-package com.plete.controller;
+package com.plete.controller.admin;
 
 import java.util.Locale;
 
@@ -25,40 +25,12 @@ import lombok.extern.slf4j.Slf4j;
 
 @Slf4j
 @RestController
-@RequestMapping("/api")
-public class HomeController implements CrudInterface<User, User> {
+@RequestMapping("/admin")
+public class HomeController {
 	 
 	@Resource(name = "userService")
 	UserService service;
 
-	@Override
-	@PostMapping("")
-	public Header<User> create(@RequestBody Header<User> request) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	@GetMapping("{id}")
-	public Header<User> read(@PathVariable Long id) {
-		
-		return Header.OK(service.selectUser(id));
-	}
-
-	@Override
-	@PutMapping("")
-	public Header<User> update(@RequestBody Header<User> request) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	@DeleteMapping("{id}")
-	public Header delete(@PathVariable Long id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-	
 	@RequestMapping(value = "/home")
 	public ModelAndView adminPage() {
 		
