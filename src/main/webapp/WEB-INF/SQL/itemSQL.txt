@@ -1,0 +1,40 @@
+  `partner_id` bigint NOT NULL,     -나중에 추가
+
+CREATE TABLE item (
+  id number(20) NOT NULL,
+  status varchar(50) DEFAULT NULL,
+  name varchar(45) NOT NULL,
+  title varchar(100) NOT NULL,
+  content varchar(200) NOT NULL,
+  price decimal(12,4) NOT NULL,
+  brand_name varchar(45) DEFAULT NULL,
+  registered_at varchar(45) DEFAULT NULL,
+  unregistered_at date DEFAULT NULL,
+  created_at date DEFAULT NULL,
+  created_by varchar(20) DEFAULT NULL,
+  updated_at date DEFAULT NULL,
+  updated_by varchar(20) DEFAULT NULL,
+  constraint item_pk PRIMARY KEY (id)
+);
+
+create sequence item_seq
+increment by 1
+start with 1
+minvalue 1
+nocycle;
+
+insert into item values(
+item_seq.nextval, 
+'REGISTERED', 
+'컴퓨터-전자제품1호', 
+'컴퓨터-전자제품1 호점의 가전제품1호', 
+'컴퓨터-전자제품1 호점의 가전제품1호의 가전제품 입니다. 2019년도 신제품 입니다', 
+'120550.0000', 
+'컴퓨터-전자제품1 호점', 
+to_char(sysdate,'yyyy-mm-dd'), 
+to_char(sysdate,'yyyy-mm-dd'), 
+to_char(sysdate,'yyyy-mm-dd'), 
+'AdminServer', 
+to_char(sysdate,'yyyy-mm-dd'), 
+'AdminServer');
+

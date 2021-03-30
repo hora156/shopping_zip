@@ -1,0 +1,38 @@
+CREATE TABLE order_detail (
+  id number(20) NOT NULL,
+  status varchar(50) NOT NULL,
+  arrival_date date NOT NULL,
+  quantity int DEFAULT NULL,
+  total_price decimal(12,4) DEFAULT NULL,
+  created_at date NOT NULL,
+  created_by varchar(20) NOT NULL,
+  updated_at date DEFAULT NULL,
+  updated_by varchar(20) DEFAULT NULL,
+  order_group_id number(20) NOT NULL,
+  item_id number(20) NOT NULL,
+  constraint order_detail_pk PRIMARY KEY (id),
+  constraint order_fk foreign key(order_group_id)
+  references order_group(id),
+  constraint item_fk foreign key(item_id)
+  references item(id)
+);
+
+create sequence order_detail_seq
+increment by 1
+start with 1
+minvalue 1
+nocycle;
+
+insert into order_detail values(
+order_detail_seq.nextval, 
+'REGISTERED', 
+sysdate, 
+'1', 
+'24317.0000', 
+sysdate, 
+'AdminUser', 
+NULL, 
+NULL, 
+'2', 
+'1'
+);

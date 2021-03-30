@@ -1,0 +1,20 @@
+CREATE TABLE admin_user (
+  userid varchar(50) NOT NULL,
+  username varchar(12) NOT NULL,
+  password varchar(50) NOT NULL,
+  status varchar(50) NOT NULL,
+  usergrade varchar(50) NOT NULL,
+  last_login_at date DEFAULT NULL,
+  login_fail_count int DEFAULT NULL,
+  password_updated_at date DEFAULT NULL,
+  registered_at date DEFAULT NULL,
+  unregistered_at date DEFAULT NULL,
+  created_at date NOT NULL,
+  created_by varchar(20) NOT NULL,
+  updated_at date DEFAULT NULL,
+  updated_by varchar(20) DEFAULT NULL,
+  CONSTRAINT admin_pk PRIMARY KEY (userid)
+);
+
+INSERT INTO admin_user (userid, username, password, status, usergrade, login_fail_count, created_at, created_by) VALUES ('joins', 'admin', '1234', 'REGISTERED', '01', '0', '2021-03-30', 'master');
+
