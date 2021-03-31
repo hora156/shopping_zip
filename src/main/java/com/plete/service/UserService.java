@@ -27,10 +27,7 @@ public class UserService implements IuserService {
 		return mapper.userList();
 	}
 
-	@Override
-	public List<OrderGroup> orderList() {
-		return mapper.orderList();
-	}
+
 	
 	
 	

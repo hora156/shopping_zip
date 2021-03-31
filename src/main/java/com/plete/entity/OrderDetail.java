@@ -16,19 +16,25 @@ public class OrderDetail {
 
     private String status;
 
-    private LocalDateTime arrivalDate;
+    private LocalDateTime arrival_date;
 
     private Integer quantity;
 
-    private BigDecimal totalPrice;
+    private BigDecimal total_price;
 
-    private LocalDateTime createdAt;
+    private LocalDateTime created_at;
 
-    private String createdBy;
+    private String created_by;
 
-    private LocalDateTime updatedAt;
+    private LocalDateTime updated_at;
 
-    private String updatedBy;
+    private String updated_by;
+    
+    private Long item_id;
+    
+    private Long order_group_id;
+    
+    private String name;
 
     // OrderDetail N : 1 Item
     private Item item;

@@ -66,15 +66,6 @@ public class ClientUserController implements CrudInterface<User, User> {
 		return model;
 	}
 	
-	@RequestMapping("/orderList")
-	public ModelAndView orderList(){
-		
-		ModelAndView model = new ModelAndView("/admin/content/orderList");
-		
-		model.addObject("order", Header.OK(service.orderList()));
-		
-		
-		return model;
-	}
+
 
 }

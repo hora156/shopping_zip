@@ -36,6 +36,7 @@
         <!-- Optionally, you can add icons to the links -->
         <li class="active"><a href="#" onclick="getOrderInfo();"><i class="fa fa-link"></i> <span>주문 관리</span></a></li>
         <li><a href="#" onclick="getUser();"><i class="fa fa-link"></i> <span>회원 관리</span></a></li>
+        <li><a href="#" onclick="getUser();"><i class="fa fa-link"></i> <span>상품 관리</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>Multilevel</span>
             <span class="pull-right-container">
