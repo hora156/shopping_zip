@@ -99,6 +99,21 @@ function itemDetail() {
 		}
 	});
 }
+
+function uploadItem() {
+    var form = jQuery("#fileForm")[0];
+    var formData = new FormData(form);
+	$.ajax({
+		url:"/admin/uploadItem",
+		type : "POST",
+		processData : false,
+		contentType : false,
+	    data : formData,
+		success:function(result){
+			console.log(result);
+		}
+	});
+}
 			
 $(document).ready(function() {
 	getOrderInfo();

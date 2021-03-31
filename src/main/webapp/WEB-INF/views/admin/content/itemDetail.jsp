@@ -15,36 +15,39 @@
     </section>
     <!-- Main content -->
     <section class="content container-fluid">
-    <form id="fileForm" method="post" enctype="multipart/form-data"></form>
+    <form id="fileForm" method="post" enctype="multipart/form-data">
     	<table class="table table-striped table-bordered table-hover text-center">
     		<tr>
     			<th>제품 이름</th>
-    			<td><input type="text" name="name" placeholder="제품 이름"></td>
+    			<td colspan="3"><input style="width: 100%" type="text" name="name" placeholder="제품 이름"></td>
     		</tr>
     		<tr>
     			<th>타이틀</th>
-    			<td><input type="text" name="title" placeholder="타이틀"></td>
+    			<td colspan="3"><input style="width: 100%" type="text" name="title" placeholder="타이틀"></td>
     		</tr>
     		<tr>
     			<th>제품 설명</th>
-    			<td><input type="text" name="content" placeholder="제품 설명"></td>
+    			<td colspan="3"><textarea style="width: 100%" type="text" name="content" placeholder="제품 설명"></textarea></td>
     		</tr>
     		<tr>
     			<th>가격</th>
-    			<td><input type="text" name="price" placeholder="가격"></td>
+    			<td colspan="3"><input style="width: 100%" type="text" name="price" placeholder="가격"></td>
     		</tr>
     		<tr>
     			<th>브렌드</th>
-    			<td><input type="text" name="brand_name" placeholder="브렌드"></td>
+    			<td colspan="3"><input style="width: 100%" type="text" name="brand_name" placeholder="브렌드"></td>
     		</tr>
     		<tr>
+    			<th>타이틀 이미지</th>
+    			<td><input type="file" name="title_img" multiple="true"></td>
     			<th>이미지 파일</th>
-    			<td><input type="file" name="image" multiple="true"></td>
+    			<td><input type="file" name="multi_img"></td>
     		</tr>
     	</table>
     <div class="col-12 text-right">
-      	<button onclick="">추가</button>
+      	<input type="button" onclick="uploadItem();" value="추가">
 	</div>
+	</form>
     </section>
     <!-- /.content -->
 </div>
