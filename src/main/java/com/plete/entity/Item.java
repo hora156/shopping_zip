@@ -25,19 +25,19 @@ public class Item {
 
     private BigDecimal price;
 
-    private String brandName;
+    private String brand_name;
 
-    private LocalDateTime registeredAt;
+    private String registered_at;
 
-    private LocalDateTime unregisteredAt;
+    private String unregistered_at;
 
-    private LocalDateTime createdAt;
+    private String created_at;
 
-    private String createdBy;
+    private String created_by;
 
-    private LocalDateTime updatedAt;
+    private String updated_at;
 
-    private String updatedBy;
+    private String updated_by;
 
     // 1 : N
     // LAZY = 지연로딩, EAGER = 즉시로딩

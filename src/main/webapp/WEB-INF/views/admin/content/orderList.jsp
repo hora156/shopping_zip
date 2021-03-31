@@ -3,6 +3,19 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 
 <div id="panel-body">
+
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+      <h1>주문 관리
+        <small>Optional description</small>
+      </h1>
+      <ol class="breadcrumb">
+        <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+        <li class="active">Here</li>
+      </ol>
+    </section>
+    <!-- Main content -->
+    <section class="content container-fluid">
     	<table class="table table-striped table-bordered table-hover text-center">
     		<thead>
     			<tr class="something">
@@ -61,4 +74,8 @@
    			</c:forEach>
     		</tbody>
     	</table>
+    
+    </section>
+    <!-- /.content -->
+
 </div>

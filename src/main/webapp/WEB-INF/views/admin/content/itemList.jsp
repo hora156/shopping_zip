@@ -5,7 +5,7 @@
 <div id="content-main">
     <!-- Content Header (Page header) -->
     <section class="content-header">
-      <h1>회원 관리 
+      <h1>상품 관리 
         <small>Optional description</small>
       </h1>
       <ol class="breadcrumb">
@@ -16,28 +16,37 @@
     <!-- Main content -->
     <section class="content container-fluid">
     
-    	<table class="table table-striped table-bordered table-hover">
+    	<table class="table table-striped table-bordered table-hover text-center">
     		<thead>
     			<tr>
-    				<th>유저ID</th>
-    				<th>Account</th>
-    				<th>Email</th>
-    				<th>PhoneNumber</th>
-					<th>Registered</th>
+    				<th style="width: 12%">제품 번호</th>
+    				<th>이름</th>
+    				<th>타이틀</th>
+    				<th>가격</th>
+    				<th>업데이트 일자</th>
+					<th>수정</th>
     			</tr>
     		</thead>
     		<tbody>
-    		<c:forEach items="${user.data}" var="user">
+    		<c:forEach items="${item.data}" var="item">
     			<tr>
-    				<td>${user.id}</td>
-    				<td>${user.account}</td>
-    				<td>${user.email}</td>
-    				<td>${user.phoneNumber}</td>
-    				<td>${user.status}</td>
+					<td>${item.id}</td>
+					<td>${item.name}</td>
+					<td>${item.title}</td>
+					<td>${item.price} </td>
+					<td>${item.updated_at}</td>
+					<td> 
+						<a href="#" class="btn btn-default btn-sm">
+							<i class="glyphicon glyphicon-cog"></i>
+						</a>
+					</td>
     			</tr>
    			</c:forEach>
     		</tbody>
     	</table>
+    <div class="col-12 text-right">
+      	<button onclick="itemDetail();">제품 추가</button>
+	</div>
     </section>
     <!-- /.content -->
 </div>
