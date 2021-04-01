@@ -11,6 +11,4 @@ public interface UserMapper {
 	
 	List<User> userList();
 	
-	List<OrderGroup> orderList();
-	
 }

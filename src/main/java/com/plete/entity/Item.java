@@ -38,6 +38,8 @@ public class Item {
     private String updated_at;
 
     private String updated_by;
+    
+    private String title_img_upload;
 
     // 1 : N
     // LAZY = 지연로딩, EAGER = 즉시로딩

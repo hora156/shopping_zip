@@ -39,9 +39,9 @@
     		</tr>
     		<tr>
     			<th>타이틀 이미지</th>
-    			<td><input type="file" name="title_img" multiple="true"></td>
+    			<td><input type="file" name="title_img"></td>
     			<th>이미지 파일</th>
-    			<td><input type="file" name="multi_img"></td>
+    			<td><input type="file" name="multi_img"  multiple="true"></td>
     		</tr>
     	</table>
     <div class="col-12 text-right">

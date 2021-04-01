@@ -110,7 +110,7 @@ function uploadItem() {
 		contentType : false,
 	    data : formData,
 		success:function(result){
-			console.log(result);
+			getItem();
 		}
 	});
 }

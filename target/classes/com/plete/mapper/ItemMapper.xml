@@ -9,4 +9,23 @@
     	select * from item
     </select>
     
+    <insert id="uploadItem">
+    	insert into item values(
+			item_seq.nextval,
+			#{status},
+			#{name},
+			#{title},
+			#{content},
+			#{price},
+			#{brand_name},
+			to_char(sysdate,'yyyy-mm-dd'),
+			to_char(sysdate,'yyyy-mm-dd'),
+			to_char(sysdate,'yyyy-mm-dd'),
+			#{created_by},
+			to_char(sysdate,'yyyy-mm-dd'),
+			#{updated_by},
+			#{title_img_upload}
+		)
+    </insert>
+    
 </mapper>

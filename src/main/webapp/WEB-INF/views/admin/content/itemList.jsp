@@ -19,22 +19,24 @@
     	<table class="table table-striped table-bordered table-hover text-center">
     		<thead>
     			<tr>
-    				<th style="width: 12%">제품 번호</th>
-    				<th>이름</th>
-    				<th>타이틀</th>
-    				<th>가격</th>
-    				<th>업데이트 일자</th>
-					<th>수정</th>
+    				<th style="width: 12%; vertical-align : middle;">제품 번호</th>
+    				<th style="vertical-align : middle;">이름</th>
+    				<th style="vertical-align : middle;">타이틀</th>
+    				<th style="vertical-align : middle;">가격</th>
+    				<th style="vertical-align : middle;">업데이트 일자</th>
+					<th style="vertical-align : middle;">이미지</th>
+					<th style="vertical-align : middle;">수정</th>
     			</tr>
     		</thead>
     		<tbody>
     		<c:forEach items="${item.data}" var="item">
     			<tr>
-					<td>${item.id}</td>
-					<td>${item.name}</td>
-					<td>${item.title}</td>
-					<td>${item.price} </td>
-					<td>${item.updated_at}</td>
+					<td style="vertical-align : middle;">${item.id}</td>
+					<td style="vertical-align : middle;">${item.name}</td>
+					<td style="vertical-align : middle;">${item.title}</td>
+					<td style="vertical-align : middle;">${item.price} </td>
+					<td style="vertical-align : middle;">${item.updated_at}</td>
+					<td><img alt="image" src="..\resources\upload${item.title_img_upload}"></td>
 					<td> 
 						<a href="#" class="btn btn-default btn-sm">
 							<i class="glyphicon glyphicon-cog"></i>
