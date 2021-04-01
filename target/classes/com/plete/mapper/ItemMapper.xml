@@ -9,9 +9,14 @@
     	select * from item
     </select>
     
+    
+    
     <insert id="uploadItem">
+    	<selectKey keyProperty="id" order="BEFORE" resultType="Long">
+    		select item_seq.nextval from dual
+    	</selectKey>
     	insert into item values(
-			item_seq.nextval,
+			#{id},
 			#{status},
 			#{name},
 			#{title},
@@ -26,6 +31,13 @@
 			#{updated_by},
 			#{title_img_upload}
 		)
+    </insert>
+    
+    <insert id="uploadMultiFile">
+    	insert into multi_img_tbl values (
+    		#{item_id},
+    		#{real_path_file_name}
+    	)
     </insert>
     
 </mapper>

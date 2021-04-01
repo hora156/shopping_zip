@@ -1,0 +1,6 @@
+create table multi_img_tbl (
+item_id number(20) not null, 
+real_path_file_name varchar(100) not null, 
+constraint img_fk foreign key(item_id)
+references item(id)
+);

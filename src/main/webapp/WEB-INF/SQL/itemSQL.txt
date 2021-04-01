@@ -58,13 +58,30 @@ item_seq.nextval,
 #{title_img_upload}
 )
 
-insert into item values(
+variable v_id number;
+
+insert into item (
+  id,
+  status,
+  name,
+  title,
+  content,
+  price,
+  brand_name,
+  registered_at,
+  unregistered_at,
+  created_at,
+  created_by,
+  updated_at,
+  updated_by,
+  title_img_upload
+) values (
 item_seq.nextval, 
 'REGISTERED', 
-'fdsa', 
+'test', 
 'test447123', 
-'123', 
-123, 
+'123',
+ 123, 
 '123', 
 to_char(sysdate,'yyyy-mm-dd'), 
 to_char(sysdate,'yyyy-mm-dd'), 
@@ -73,7 +90,7 @@ to_char(sysdate,'yyyy-mm-dd'),
 to_char(sysdate,'yyyy-mm-dd'), 
 'admin', 
 '\2021\04\01\s_1322dddb-c63c-45f5-abf9-ff4c3cbefcb4_퀵마스크.jpg' 
-);
+) returning name into : v_name;
 
 insert into item values(
 item_seq.nextval, 

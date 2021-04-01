@@ -9,5 +9,5 @@ import com.plete.model.request.ItemApiRequest;
 public interface IitemService {
 	List<Item> itemList();
 	
-	void uploadItem(ItemApiRequest req, String uploadPath) throws IOException;
+	Long uploadItem(ItemApiRequest req, String uploadPath) throws IOException;
 }

@@ -19,6 +19,8 @@ import lombok.NoArgsConstructor;
 @Builder
 public class ItemApiRequest {
 	
+	private Long id;
+	
     private String status;
 
     private String name;
