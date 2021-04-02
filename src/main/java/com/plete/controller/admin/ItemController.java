@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
@@ -17,6 +18,7 @@ import com.plete.entity.Item;
 import com.plete.model.request.ItemApiRequest;
 import com.plete.service.ItemService;
 import com.plete.util.Header;
+import com.plete.util.Pagination;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -43,10 +45,18 @@ public class ItemController  {
 
 	
 	@RequestMapping("/itemList")
-	public ModelAndView itemList() {
+	public ModelAndView itemList(
+            @RequestParam(value = "currentPage", required = false, defaultValue = "1") int currentPage,
+            @RequestParam(value = "cntPerPage", required = false, defaultValue = "10") int cntPerPage,
+            @RequestParam(value = "pageSize", required = false, defaultValue = "10") int pageSize) {
 		
 		ModelAndView model = new ModelAndView("/admin/content/itemList");
-		model.addObject("item", Header.OK(service.itemList()));
+		int listCnt = service.tableCount();
+        Pagination pagination = new Pagination(currentPage, cntPerPage, pageSize);
+        pagination.setTotalRecordCount(listCnt);
+ 
+        model.addObject("pagination", pagination);
+		model.addObject("item", Header.OK(service.itemList(pagination)));
 		
 		return model;
 		

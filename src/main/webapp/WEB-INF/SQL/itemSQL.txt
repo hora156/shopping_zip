@@ -9,10 +9,10 @@ CREATE TABLE item (
   price decimal(12,4) NOT NULL,
   brand_name varchar(45) DEFAULT NULL,
   registered_at varchar(45) DEFAULT NULL,
-  unregistered_at date DEFAULT NULL,
-  created_at date DEFAULT NULL,
+  unregistered_at varchar(45) DEFAULT NULL,
+  created_at varchar(45) DEFAULT NULL,
   created_by varchar(20) DEFAULT NULL,
-  updated_at date DEFAULT NULL,
+  updated_at varchar(45) DEFAULT NULL,
   updated_by varchar(20) DEFAULT NULL,
   title_img_upload varchar(100) NOT NULL,
   constraint item_pk PRIMARY KEY (id)

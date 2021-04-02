@@ -4,9 +4,33 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
  
 <mapper namespace="com.plete.mapper.ItemMapper">
+
     
     <select id="itemList" resultType="com.plete.entity.Item">
-    	select * from item
+    	select * 
+    	from (
+        select row_number() over(order by updated_at desc) as
+        row_num, 
+		id,
+		status,
+		name,
+		title,
+		content,
+		price,
+		brand_name,
+		registered_at,
+		unregistered_at,
+		created_at,
+		created_by,
+		updated_at,
+		updated_by,
+		title_img_upload
+		from item
+        ) 
+        <if test="firstRecordIndex != null and lastRecordIndex != null">
+        	where row_num between #{firstRecordIndex} and
+        	#{lastRecordIndex}
+        </if>
     </select>
     
     
@@ -23,11 +47,11 @@
 			#{content},
 			#{price},
 			#{brand_name},
-			to_char(sysdate,'yyyy-mm-dd'),
-			to_char(sysdate,'yyyy-mm-dd'),
-			to_char(sysdate,'yyyy-mm-dd'),
+			to_char(sysdate,'YYYY-MM-DD HH24-MI-SS'),
+			to_char(sysdate,'YYYY-MM-DD HH24-MI-SS'),
+			to_char(sysdate,'YYYY-MM-DD HH24-MI-SS'),
 			#{created_by},
-			to_char(sysdate,'yyyy-mm-dd'),
+			to_char(sysdate,'YYYY-MM-DD HH24-MI-SS'),
 			#{updated_by},
 			#{title_img_upload}
 		)
@@ -39,5 +63,10 @@
     		#{real_path_file_name}
     	)
     </insert>
+    
+	<select id="tableCount" resultType="int">
+    	select count(*) from item
+    </select>
+    
     
 </mapper>

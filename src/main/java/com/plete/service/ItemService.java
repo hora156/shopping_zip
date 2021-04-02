@@ -15,6 +15,7 @@ import com.plete.entity.Item;
 import com.plete.mapper.ItemMapper;
 import com.plete.model.request.ItemApiRequest;
 import com.plete.model.request.MultiFileUploadRequest;
+import com.plete.util.Pagination;
 import com.plete.util.UploadFileUtils;
 
 import lombok.extern.slf4j.Slf4j;
@@ -27,9 +28,9 @@ public class ItemService implements IitemService {
 	private ItemMapper mapper;
 	
 	@Override
-	public List<Item> itemList() {
+	public List<Item> itemList(Pagination pagination) {
 		// TODO Auto-generated method stub
-		return mapper.itemList();
+		return mapper.itemList(pagination);
 	}
 
 	@Override
@@ -60,6 +61,11 @@ public class ItemService implements IitemService {
 		
 		return test;
 		
+	}
+
+	@Override
+	public int tableCount() {
+		return mapper.tableCount();
 	}
 	
 	
