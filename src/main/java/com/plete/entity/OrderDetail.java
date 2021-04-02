@@ -16,17 +16,17 @@ public class OrderDetail {
 
     private String status;
 
-    private LocalDateTime arrival_date;
+    private String arrival_date;
 
     private Integer quantity;
 
     private BigDecimal total_price;
 
-    private LocalDateTime created_at;
+    private String created_at;
 
     private String created_by;
 
-    private LocalDateTime updated_at;
+    private String updated_at;
 
     private String updated_by;
     
