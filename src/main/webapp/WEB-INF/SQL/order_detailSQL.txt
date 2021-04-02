@@ -33,6 +33,6 @@ sysdate,
 'AdminUser', 
 NULL, 
 NULL, 
-'1', 
-'1'
+'2', 
+'45'
 );

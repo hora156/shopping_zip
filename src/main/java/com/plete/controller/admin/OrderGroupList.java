@@ -54,7 +54,6 @@ public class OrderGroupList implements CrudInterface<OrderDetail, OrderDetail> {
 		List<OrderGroup> orderList = service.orderList();
 		for(int i = 0; i < orderList.size(); i++) {
 			orderList.get(i).setOrderDetailList(service.detailList(orderList.get(i).getId()));
-			
 		}
 		
 		model.addObject("order", Header.OK(orderList));

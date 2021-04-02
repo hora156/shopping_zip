@@ -53,18 +53,18 @@
 			</thead>	
 			<tbody>
 			<c:forEach items="${order.orderDetailList}" var="detail">					
-            <tr data-toggle="collapse"  class="accordion-toggle">
-				<td>${detail.id}</td>
-				<td>${detail.name}</td>
-				<td>${detail.quantity} </td>
-				<td>${detail.total_price}</td>
-				<td>${detail.arrival_date}</td>
-				<td> 
-					<a href="#" class="btn btn-default btn-sm">
-						<i class="glyphicon glyphicon-cog"></i>
-					</a>
-				</td>
-			</tr>
+	            <tr data-toggle="collapse"  class="accordion-toggle">
+					<td>${detail.id}</td>
+					<td>${detail.name}</td>
+					<td>${detail.quantity} </td>
+					<td>${detail.total_price}</td>
+					<td>${detail.arrival_date}</td>
+					<td> 
+						<a href="#" class="btn btn-default btn-sm">
+							<i class="glyphicon glyphicon-cog"></i>
+						</a>
+					</td>
+				</tr>
 			</c:forEach>
         </tbody>
         </table>
